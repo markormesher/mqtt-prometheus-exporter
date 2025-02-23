@@ -2,7 +2,9 @@
 
 # MQTT Prometheus Exporter
 
-A simple Prometheus exporter to expose some of the `$SYS` topics on an MQTT server, such as [Mosquitto](https://mosquitto.org).
+A simple Prometheus exporter to expose the value of some `$SYS` topics from an MQTT broker.
+
+Note that whilst there is _some_ standardisation between brokers for `$SYS` topics, this project is developed against the popular [Mosquitto](https://mosquitto.org) broker. PRs to support other brokers are welcome.
 
 :rocket: Jump to [quick-start example](#quick-start-docker-compose-example).
 
