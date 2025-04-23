@@ -73,8 +73,12 @@ func main() {
 
 	http.HandleFunc("/metrics", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Add("content-type", "text/plain")
-		w.Write([]byte(metrics.Flush()))
+		_, err := w.Write([]byte(metrics.Flush()))
+		if err != nil {
+			l.Error("error writing HTTP response", "error", err)
+		}
 	})
+
 	err = http.ListenAndServe(fmt.Sprintf(":%d", settings.ListenPort), nil)
 	if err != nil {
 		l.Error("http server failed", "err", err)
