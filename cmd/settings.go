@@ -23,7 +23,7 @@ func getSettings() (Settings, error) {
 	}
 	listenPort, err := strconv.Atoi(listenPortStr)
 	if err != nil {
-		return Settings{}, fmt.Errorf("Could not parse listen port as an integer: %w", err)
+		return Settings{}, fmt.Errorf("could not parse listen port as an integer: %w", err)
 	}
 
 	settings := Settings{
