@@ -15,9 +15,15 @@ RUN go build -o ./build/main ./cmd/...
 FROM ghcr.io/markormesher/scratch:v0.4.10@sha256:50e90f252c2c5282a4e4895274089ce3b349fb10e77a517fd05721ca4ae1bbe2
 WORKDIR /app
 
-LABEL image.registry=ghcr.io
-LABEL image.name=markormesher/mqtt-prometheus-exporter
-
 COPY --from=builder /app/build/main /usr/local/bin/mqtt-prometheus-exporter
 
 CMD ["/usr/local/bin/mqtt-prometheus-exporter"]
+
+LABEL image.name=markormesher/mqtt-prometheus-exporter
+LABEL image.registry=ghcr.io
+LABEL org.opencontainers.image.description=""
+LABEL org.opencontainers.image.documentation=""
+LABEL org.opencontainers.image.title="mqtt-prometheus-exporter"
+LABEL org.opencontainers.image.url="https://github.com/markormesher/mqtt-prometheus-exporter"
+LABEL org.opencontainers.image.vendor=""
+LABEL org.opencontainers.image.version=""
