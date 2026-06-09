@@ -1,4 +1,3 @@
-![CircleCI](https://img.shields.io/circleci/build/github/markormesher/mqtt-prometheus-exporter)
 
 # MQTT Prometheus Exporter
 
